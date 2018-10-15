@@ -30,7 +30,6 @@ namespace MenuShell_StefanBearson.Tools
                 default:
                     ChangeColorThemeView();
                     break;
-
             }
         }
     }

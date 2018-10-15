@@ -32,7 +32,6 @@ namespace MenuShell_StefanBearson.Tools
                 default:
                     Console.WriteLine("Default case");
                     break;
-
             }
         }
 

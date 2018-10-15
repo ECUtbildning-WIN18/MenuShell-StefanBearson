@@ -10,7 +10,8 @@ namespace MenuShell_StefanBearson.Views
             Console.Clear();
             Header.HeaderView();
             Write.WriteAt(Config.fromBorder, 5, "ReceptionsMenu", true);
-            Console.ReadKey();
+            Write.WriteAt(Config.fromBorder, 7, "Press any key to continue...", false);
+            Login.LoginView();
         }
     }
 }

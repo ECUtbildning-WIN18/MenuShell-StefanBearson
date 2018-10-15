@@ -1,7 +1,7 @@
 ﻿using MenuShell_StefanBearson.Domain;
+using MenuShell_StefanBearson.Services;
 using MenuShell_StefanBearson.Tools;
 using MenuShell_StefanBearson.Views;
-using System.Speech.Synthesis;
 
 namespace MenuShell_StefanBearson
 {
@@ -11,12 +11,11 @@ namespace MenuShell_StefanBearson
 
         static void Main(string[] args)
         {
+            CreateUsersXMLifNotExists.CreateXML();
             AccessibilitySpeak.ChangeColorThemeView();
             ChangeColorTheme.ChangeColorThemeView();
 
             Login.LoginView();
         }
-
-
     }
 }
