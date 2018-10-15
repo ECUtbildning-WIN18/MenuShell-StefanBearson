@@ -1,15 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MenuShell_StefanBearson.Domain;
+using MenuShell_StefanBearson.Tools;
+using MenuShell_StefanBearson.Views;
+using System.Speech.Synthesis;
 
 namespace MenuShell_StefanBearson
 {
     class Program
     {
+        public static User userLogdIn;
+
         static void Main(string[] args)
         {
+            AccessibilitySpeak.ChangeColorThemeView();
+            ChangeColorTheme.ChangeColorThemeView();
+
+            Login.LoginView();
         }
+
+
     }
 }
