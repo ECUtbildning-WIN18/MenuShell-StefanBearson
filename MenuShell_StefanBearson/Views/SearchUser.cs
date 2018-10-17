@@ -19,6 +19,8 @@ namespace MenuShell_StefanBearson.Views
             string searchUserName = Console.ReadLine();
 
             Searchfunction(searchUserName);
+
+            SystemAdmin.MenuView();
         }
 
         public static void Searchfunction(string SearchUserName)
@@ -33,14 +35,14 @@ namespace MenuShell_StefanBearson.Views
 
             Console.ReadKey();
 
-            Console.CursorVisible = false;
+            Console.CursorVisible = true;
 
-            SystemAdmin.MenuView();
+
         }
 
         public static void PrintList(List<User> searchList)
         {
-            Console.CursorVisible = true;
+            Console.CursorVisible = false;
 
             Write.WriteAt(5, 8, $"Username", ConsoleColor.Blue, false);
             Write.WriteAt(20, 8, $"Password", ConsoleColor.Blue, false);
