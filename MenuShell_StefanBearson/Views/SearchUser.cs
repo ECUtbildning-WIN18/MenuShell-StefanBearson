@@ -3,6 +3,7 @@ using MenuShell_StefanBearson.Services;
 using MenuShell_StefanBearson.Tools;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MenuShell_StefanBearson.Views
 {
@@ -31,16 +32,14 @@ namespace MenuShell_StefanBearson.Views
 
             List<User> searchList = users.FindAll(x => x.Username.ToLower().Contains(SearchUserName.ToLower()));
 
-            PrintList(searchList);
+            PrintList(searchList, users);
 
             Console.ReadKey();
 
             Console.CursorVisible = true;
-
-
         }
 
-        public static void PrintList(List<User> searchList)
+        public static void PrintList(List<User> searchList, List<User> users)
         {
             Console.CursorVisible = false;
 
@@ -58,6 +57,33 @@ namespace MenuShell_StefanBearson.Views
 
                 row++;
             }
+            Write.WriteAt(5, row, $"(D) Delete user/Users?", ConsoleColor.Red, false);
+            row++;
+
+            ChoseOnPrintList(users, searchList);
+        }
+
+        public static void ChoseOnPrintList(List<User> userList, List<User> usersHowwillbeDeleted)
+        {
+            ConsoleKey thePick = Console.ReadKey().Key;
+
+            Console.CursorVisible = true;
+
+            switch (thePick)
+            {
+                case ConsoleKey.D:
+                    DeleteUsers(userList, usersHowwillbeDeleted);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public static void DeleteUsers(List<User> userList, List<User> usersHowwillbeDeleted)
+        {
+            List<User> newList = userList.Except(usersHowwillbeDeleted).ToList();
+
+            SaveNewUserList.Save(newList);
         }
     }
 }
