@@ -1,7 +1,9 @@
 ﻿using MenuShell_StefanBearson.Services;
 using MenuShell_StefanBearson.Tools;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using MenuShell_StefanBearson.Domain;
 
 namespace MenuShell_StefanBearson.Views
 {
@@ -31,17 +33,17 @@ namespace MenuShell_StefanBearson.Views
 
             MenuView(row);
 
-            MenuChoice();
+            MenuChoice(users);
 
             SystemAdmin.MenuView();
         }
 
         public static void MenuView(int row)
         {
-            Write.WriteAt(Config.fromBorder, row + 2, $"(D) Delete (B) Back", ConsoleColor.DarkGray, false);
+            Write.WriteAt(Config.fromBorder, row + 2, $"(D)elete (V)iew User Info (B)ack", ConsoleColor.DarkGray, false);
         }
 
-        public static void MenuChoice()
+        public static void MenuChoice(List<User> users)
         {
             ConsoleKey thePick = Console.ReadKey().Key;
 
@@ -54,6 +56,9 @@ namespace MenuShell_StefanBearson.Views
                     break;
                 case ConsoleKey.B:
                     SystemAdmin.MenuView();
+                    break;
+                case ConsoleKey.V:
+                    UserInfoView.View(users);
                     break;
                 default:
                     break;

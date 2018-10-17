@@ -24,7 +24,7 @@ namespace MenuShell_StefanBearson.Views
                 row++;
             }
 
-            Write.WriteAt(Config.fromBorder, row + 2, $"Type the name of the user you want to remove:", true);
+            Write.WriteAt(Config.fromBorder, row + 2, $"Type the name of the user you want to remove:", false);
 
             Console.SetCursorPosition(Config.fromBorder, row + 3);
 
@@ -40,7 +40,7 @@ namespace MenuShell_StefanBearson.Views
 
                 SystemAdmin.MenuView();
             }
-                Console.WriteLine();
+            Console.WriteLine();
             for (int i = 0; i < users.Count; i++)
             {
                 if (users[i].Username == removeName)
@@ -48,8 +48,12 @@ namespace MenuShell_StefanBearson.Views
             }
 
 
+            Write.WriteAt(Config.fromBorder, row + 3, $"Delete user {removeName}? (Y)es : Any other key for not deleating", false);
 
-            SaveNewUserList.Save(users);
+            ConsoleKey key = Console.ReadKey().Key;
+
+            if (key == ConsoleKey.Y)
+                SaveNewUserList.Save(users);
 
             SystemAdmin.MenuView();
         }

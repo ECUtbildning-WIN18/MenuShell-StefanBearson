@@ -68,6 +68,7 @@
     <Compile Include="Views\RemoveUserMenu.cs" />
     <Compile Include="Views\SearchUser.cs" />
     <Compile Include="Views\SystemAdmin.cs" />
+    <Compile Include="Views\UserInfoView.cs" />
     <Compile Include="Views\WrongLoginDetails.cs" />
   </ItemGroup>
   <ItemGroup>
