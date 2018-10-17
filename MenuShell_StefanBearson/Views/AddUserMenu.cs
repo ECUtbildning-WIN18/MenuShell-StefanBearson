@@ -10,10 +10,11 @@ namespace MenuShell_StefanBearson.Views
         public static void AddUser()
         {
             Header.HeaderView();
+
             Write.WriteAt(Config.fromBorder, 5, "Add a user!", true);
             Write.WriteAt(Config.fromBorder, 6, "Username:", false);
             Write.WriteAt(Config.fromBorder, 7, "Password:", false);
-            Write.WriteAt(Config.fromBorder, 8, "Social Security Number:",false);
+            Write.WriteAt(Config.fromBorder, 8, "Social Security Number:", false);
             Write.WriteAt(Config.fromBorder, 9, "Role:", false);
 
             InputData();
@@ -26,15 +27,11 @@ namespace MenuShell_StefanBearson.Views
             Console.SetCursorPosition(Config.fromBorder + 10, 6);
             Console.ForegroundColor = ConsoleColor.Blue;
             string username = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.DarkGray;
 
             Console.SetCursorPosition(Config.fromBorder + 10, 7);
-            Console.ForegroundColor = ConsoleColor.Blue;
             string password = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.DarkGray;
 
             Console.SetCursorPosition(Config.fromBorder + 24, 8);
-            Console.ForegroundColor = ConsoleColor.Blue;
             string socialSecurityNumber = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.DarkGray;
 
@@ -56,6 +53,7 @@ namespace MenuShell_StefanBearson.Views
             }
 
             User user = new User(username, socialSecurityNumber, password, role);
+
             UserSaver.SaveUser(user);
         }
 

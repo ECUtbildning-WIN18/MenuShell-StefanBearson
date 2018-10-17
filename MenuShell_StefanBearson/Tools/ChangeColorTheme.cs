@@ -10,8 +10,10 @@ namespace MenuShell_StefanBearson.Tools
         {
             Console.Clear();
             Console.CursorVisible = false;
+
             Write.WriteAt(Config.fromBorder, 5, "(1) for light theme", true);
             Write.WriteAt(Config.fromBorder, 6, "(2) for dark theme", true);
+
             ChangeColorThemeSelector();
         }
 

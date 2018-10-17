@@ -10,8 +10,10 @@ namespace MenuShell_StefanBearson.Tools
         {
             Console.Clear();
             Console.CursorVisible = false;
+
             Write.WriteAt(Config.fromBorder, 5, "(1) for Accessibilty Speak mode", false);
             Write.WriteAt(Config.fromBorder, 6, "(2) for quiet mode", false);
+
             ChangeColorThemeSelector();
         }
 

@@ -23,6 +23,7 @@ namespace MenuShell_StefanBearson.Views
             }
 
             Write.WriteAt(Config.fromBorder, row + 2, $"Type the name of the user you want to remove:", true);
+
             Console.SetCursorPosition(Config.fromBorder, row + 3);
 
             string removeName = Console.ReadLine();

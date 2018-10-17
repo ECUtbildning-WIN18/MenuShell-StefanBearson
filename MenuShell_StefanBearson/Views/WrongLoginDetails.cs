@@ -8,9 +8,11 @@ namespace MenuShell_StefanBearson.Views
         public static void View()
         {
             Console.Clear();
+
             Write.WriteAt(Config.fromBorder, 5, "Wong login details", ConsoleColor.Red, true);
             Write.WriteAt(Config.fromBorder, 6, "Please try again or contact Admin", ConsoleColor.Red, true);
             Write.WriteAt(Config.fromBorder, 7, "Press any key to continue...", ConsoleColor.Red, true);
+
             Console.ReadKey();
             Login.LoginView();
         }

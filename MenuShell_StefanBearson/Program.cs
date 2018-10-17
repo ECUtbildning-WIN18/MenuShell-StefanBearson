@@ -12,7 +12,9 @@ namespace MenuShell_StefanBearson
         static void Main(string[] args)
         {
             CreateUsersXMLifNotExists.CreateXML();
+
             AccessibilitySpeak.ChangeColorThemeView();
+
             ChangeColorTheme.ChangeColorThemeView();
 
             Login.LoginView();

@@ -60,10 +60,13 @@
     <Compile Include="Tools\SecretPassword.cs" />
     <Compile Include="Tools\Write.cs" />
     <Compile Include="Views\AddUserMenu.cs" />
+    <Compile Include="Views\AdminStartMenu.cs" />
     <Compile Include="Views\Header.cs" />
+    <Compile Include="Views\ListUsersView.cs" />
     <Compile Include="Views\Login.cs" />
     <Compile Include="Views\Reception.cs" />
     <Compile Include="Views\RemoveUserMenu.cs" />
+    <Compile Include="Views\SearchUser.cs" />
     <Compile Include="Views\SystemAdmin.cs" />
     <Compile Include="Views\WrongLoginDetails.cs" />
   </ItemGroup>

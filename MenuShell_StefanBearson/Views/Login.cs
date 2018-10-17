@@ -18,10 +18,8 @@ namespace MenuShell_StefanBearson.Views
             Console.SetCursorPosition(Config.fromBorder + 10, 6);
             Console.ForegroundColor = ConsoleColor.Blue;
             string username = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.DarkGray;
 
             Console.SetCursorPosition(Config.fromBorder + 10, 7);
-            Console.ForegroundColor = ConsoleColor.Blue;
             string password = SecretPassword.EnterPassword();
             Console.ForegroundColor = ConsoleColor.DarkGray;
 

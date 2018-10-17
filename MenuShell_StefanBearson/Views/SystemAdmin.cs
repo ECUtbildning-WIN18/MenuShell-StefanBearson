@@ -10,9 +10,13 @@ namespace MenuShell_StefanBearson.Views
             Console.CursorVisible = false;
             Console.Clear();
             Header.HeaderView();
-            Write.WriteAt(Config.fromBorder, 5, "System Admin Menu", true);
+
+            Write.WriteAt(Config.fromBorder, 5, "Manage user menu", true);
             Write.WriteAt(Config.fromBorder, 7, "(1) Add user", false);
             Write.WriteAt(Config.fromBorder, 8, "(2) Remove user", false);
+            Write.WriteAt(Config.fromBorder, 9, "(3) List users", false);
+            Write.WriteAt(Config.fromBorder, 10, "(4) Search users", false);
+            Write.WriteAt(Config.fromBorder, 12, "(Q) Quit", false);
 
             ChoseOnMenuView();
         }
@@ -20,6 +24,7 @@ namespace MenuShell_StefanBearson.Views
         public static void ChoseOnMenuView()
         {
             ConsoleKey thePick = Console.ReadKey().Key;
+
             Console.CursorVisible = true;
 
             switch (thePick)
@@ -29,6 +34,15 @@ namespace MenuShell_StefanBearson.Views
                     break;
                 case ConsoleKey.D2:
                     RemoveUserMenu.RemoveUserMenuView();
+                    break;
+                case ConsoleKey.D3:
+                    ListUsersView.View();
+                    break;
+                case ConsoleKey.D4:
+                    SearchUser.SearchView();
+                    break;
+                case ConsoleKey.Q:
+                    Environment.Exit(0);
                     break;
                 default:
                     break;

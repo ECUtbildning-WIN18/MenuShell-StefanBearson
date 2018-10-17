@@ -11,6 +11,7 @@ namespace MenuShell_StefanBearson.Tools
             SpeechSynthesizer synth = new SpeechSynthesizer();
             if (AccessibilitySpeak.wantSpeak && speak)
                 synth.Speak(text);
+
             Console.SetCursorPosition(fromLeft, fromTop);
             Console.Write(text);
         }
@@ -20,6 +21,7 @@ namespace MenuShell_StefanBearson.Tools
             SpeechSynthesizer synth = new SpeechSynthesizer();
             if (AccessibilitySpeak.wantSpeak && speak)
                 synth.Speak(text);
+
             Console.SetCursorPosition(fromLeft, fromTop);
             Console.ForegroundColor = color;
             Console.Write(text);

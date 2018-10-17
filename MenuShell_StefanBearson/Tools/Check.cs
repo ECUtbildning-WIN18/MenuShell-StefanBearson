@@ -14,7 +14,7 @@ namespace MenuShell_StefanBearson.Tools
             }
             else if (user.Role == "SystemAdmin")
             {
-                SystemAdmin.MenuView();
+                AdminStartMenu.MenuView();
             }
             else
             {
