@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,8 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\CreateUsersXMLifNotExists.cs" />
+    <Compile Include="Services\IUserLoader.cs" />
+    <Compile Include="Services\SaveNewUserList.cs" />
+    <Compile Include="Services\UserLoader.cs" />
+    <Compile Include="Services\UserSaver.cs" />
+    <Compile Include="Tools\AccessibilitySpeak.cs" />
+    <Compile Include="Tools\ChangeColorTheme.cs" />
+    <Compile Include="Tools\Check.cs" />
+    <Compile Include="Tools\Config.cs" />
+    <Compile Include="Tools\SecretPassword.cs" />
+    <Compile Include="Tools\Write.cs" />
+    <Compile Include="Views\AddUserMenu.cs" />
+    <Compile Include="Views\AdminStartMenu.cs" />
+    <Compile Include="Views\Header.cs" />
+    <Compile Include="Views\ListUsersView.cs" />
+    <Compile Include="Views\Login.cs" />
+    <Compile Include="Views\Reception.cs" />
+    <Compile Include="Views\RemoveUserMenu.cs" />
+    <Compile Include="Views\SearchUser.cs" />
+    <Compile Include="Views\SystemAdmin.cs" />
+    <Compile Include="Views\WrongLoginDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
