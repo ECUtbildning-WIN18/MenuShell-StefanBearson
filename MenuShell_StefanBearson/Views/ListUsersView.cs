@@ -1,9 +1,9 @@
-﻿using MenuShell_StefanBearson.Services;
+﻿using MenuShell_StefanBearson.Domain;
+using MenuShell_StefanBearson.Services;
 using MenuShell_StefanBearson.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MenuShell_StefanBearson.Domain;
 
 namespace MenuShell_StefanBearson.Views
 {
