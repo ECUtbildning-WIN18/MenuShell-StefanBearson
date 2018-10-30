@@ -9,6 +9,7 @@ namespace MenuShell_StefanBearson.Tools
         public static void WriteAt(int fromLeft, int fromTop, string text, bool speak)
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
+
             if (AccessibilitySpeak.wantSpeak && speak)
                 synth.Speak(text);
 
@@ -19,6 +20,7 @@ namespace MenuShell_StefanBearson.Tools
         public static void WriteAt(int fromLeft, int fromTop, string text, ConsoleColor color, bool speak)
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
+
             if (AccessibilitySpeak.wantSpeak && speak)
                 synth.Speak(text);
 
