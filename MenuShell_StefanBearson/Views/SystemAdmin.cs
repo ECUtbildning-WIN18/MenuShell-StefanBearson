@@ -1,5 +1,6 @@
 ﻿using MenuShell_StefanBearson.Tools;
 using System;
+using MenuShell_StefanBearson.Services;
 
 namespace MenuShell_StefanBearson.Views
 {
@@ -36,7 +37,8 @@ namespace MenuShell_StefanBearson.Views
                     RemoveUserMenu.RemoveUserMenuView();
                     break;
                 case ConsoleKey.D3:
-                    ListUsersView.View();
+                    UserLoader.LoadSQLTolist();
+                    //ListUsersView.View();
                     break;
                 case ConsoleKey.D4:
                     SearchUser.SearchView();

@@ -55,6 +55,7 @@ namespace MenuShell_StefanBearson.Views
             User user = new User(username, socialSecurityNumber, password, role);
 
             UserSaver.SaveUser(user);
+            UserSaver.SaveToSQL(user);
         }
 
         public static void RoleInternalMenu()

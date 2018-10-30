@@ -1,6 +1,8 @@
 ﻿using MenuShell_StefanBearson.Domain;
+using MenuShell_StefanBearson.Views;
+using System;
 using System.Collections.Generic;
-using System.Xml.Linq;
+using System.Data.SqlClient;
 
 namespace MenuShell_StefanBearson.Services
 {
@@ -10,20 +12,87 @@ namespace MenuShell_StefanBearson.Services
         {
             var users = new List<User>();
 
-            var doc = XDocument.Load("Users.xml");
+            string connectionString = "Data Source=DESKTOP-K8R731S\\STEFANSQLSERVER;Initial Catalog=MenuShell;Integrated Security=true";
 
-            var root = doc.Root;
+            string queryString = "SELECT * FROM [User]";
 
-            foreach (var element in root.Elements())
+            using (var connection = new SqlConnection(connectionString))
             {
-                var username = element.Attribute("username").Value;
-                var password = element.Attribute("password").Value;
-                var socialSecurityNumber = element.Attribute("socialSecurityNumber").Value;
-                var role = element.Attribute("role").Value;
+                connection.Open();
 
-                users.Add(new User(username, socialSecurityNumber, password, role));
+                var command = new SqlCommand(queryString, connection);
+
+                var reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var user = new User(reader[1].ToString(), reader[3].ToString(), reader[2].ToString(), reader[4].ToString());
+                    users.Add(user);
+                }
+
+                connection.Close();
             }
             return users;
+        }
+
+        public static void LoadSQLTolist()
+        {
+            string connectionString = "Data Source=DESKTOP-K8R731S\\STEFANSQLSERVER;Initial Catalog=MenuShell;Integrated Security=true";
+
+            string queryString = "SELECT * FROM [User]";
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                var command = new SqlCommand(queryString, connection);
+
+                var reader = command.ExecuteReader();
+
+                Console.Clear();
+
+                Console.WriteLine();
+
+                while (reader.Read())
+                {
+                    Console.WriteLine($"{reader[1],-20} {reader[2],-10} {reader[3],-15} {reader[4]}");
+                }
+
+                Console.ReadKey();
+
+                SystemAdmin.MenuView();
+
+                connection.Close();
+
+            }
+
+        }
+
+        public static void LoadUserNameFromSQL()
+        {
+            string connectionString = "Data Source=DESKTOP-K8R731S\\STEFANSQLSERVER;Initial Catalog=MenuShell;Integrated Security=true";
+
+            string queryString = "SELECT Username FROM [User]";
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                var command = new SqlCommand(queryString, connection);
+
+                var reader = command.ExecuteReader();
+
+                Console.Clear();
+
+                Console.WriteLine();
+
+                while (reader.Read())
+                {
+                    Console.WriteLine($"{reader[0]}");
+                }
+
+                connection.Close();
+            }
         }
     }
 }

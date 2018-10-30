@@ -19,8 +19,8 @@ namespace MenuShell_StefanBearson.Views
 
             string searchUserName = Console.ReadLine();
 
-            Searchfunction(searchUserName);
-
+            //Searchfunction(searchUserName);
+            UserSearch.Search(searchUserName);
             SystemAdmin.MenuView();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace MenuShell_StefanBearson.Domain
 {
-    class User
+    class User : IUser
     {
         public string Username { get; set; }
         public string Password { get; set; }

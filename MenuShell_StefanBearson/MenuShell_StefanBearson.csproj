@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\IUser.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,8 +52,10 @@
     <Compile Include="Services\CreateUsersXMLifNotExists.cs" />
     <Compile Include="Services\IUserLoader.cs" />
     <Compile Include="Services\SaveNewUserList.cs" />
+    <Compile Include="Services\UserDelete.cs" />
     <Compile Include="Services\UserLoader.cs" />
     <Compile Include="Services\UserSaver.cs" />
+    <Compile Include="Services\UserSearch.cs" />
     <Compile Include="Tools\AccessibilitySpeak.cs" />
     <Compile Include="Tools\ChangeColorTheme.cs" />
     <Compile Include="Tools\Check.cs" />
